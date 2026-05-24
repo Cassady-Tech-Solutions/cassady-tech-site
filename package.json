@@ -27,7 +27,7 @@
 		"build": "astro build && node ./scripts/write-assetsignore.mjs",
 		"cf-typegen": "wrangler types",
 		"check": "astro build && node ./scripts/write-assetsignore.mjs && tsc && wrangler deploy --dry-run",
-		"deploy": "wrangler deploy",
+		"deploy": "node ./scripts/write-assetsignore.mjs && wrangler deploy",
 		"dev": "astro dev",
 		"preview": "astro build && node ./scripts/write-assetsignore.mjs && wrangler dev"
 	},
