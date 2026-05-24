@@ -1,0 +1,43 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	active?: "home" | "services" | "about" | "contact" | "privacy";
+}
+const { title, description, active = "home" } = Astro.props;
+const navItems = [
+	{ href: "/", label: "Home", key: "home" },
+	{ href: "/services", label: "Services", key: "services" },
+	{ href: "/about", label: "About", key: "about" },
+	{ href: "/contact", label: "Contact", key: "contact" },
+	{ href: "/privacy", label: "Privacy", key: "privacy" },
+];
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={new URL(Astro.url.pathname, "https://cassadytech.com")} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={new URL(Astro.url.pathname, "https://cassadytech.com")} />
+		<title>{title}</title>
+		<link rel="icon" href="/assets/brand/official-logo.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="nav-wrap">
+				<a class="brand" href="/" aria-label="Cassady Tech Solutions home"><img src="/assets/brand/official-logo.svg" alt="" /><span class="brand-text"><span>Cassady Tech Solutions</span><span>Managed IT services</span></span></a>
+				<button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+				<nav class="site-nav" aria-label="Primary navigation" data-site-nav>{navItems.map((item) => <a class:list={{ "is-active": active === item.key }} href={item.href}>{item.label}</a>)}</nav>
+			</div>
+		</header>
+		<main><slot /></main>
+		<footer class="site-footer"><div class="section-inner footer-grid"><div><p class="small">&copy; <span data-year></span> Cassady Tech Solutions. All rights reserved.</p><p class="small">Security-focused managed IT for Southern Colorado.</p></div><div class="footer-meta"><nav class="footer-links" aria-label="Footer navigation"><a href="/services">Services</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></nav><p class="small"><a href="mailto:samuelc@cassadytech.com">samuelc@cassadytech.com</a> <span aria-hidden="true">|</span> <a href="tel:+17197812356">719-781-2356</a></p></div></div></footer>
+		<script src="/assets/js/site.js"></script>
+	</body>
+</html>

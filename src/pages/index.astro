@@ -1,50 +1,11 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import SiteLayout from "../layouts/SiteLayout.astro";
+const title = "Cassady Tech Solutions | Security-Focused Managed IT";
+const description = "Cassady Tech Solutions provides security-focused managed IT and cybersecurity services for small to mid-sized businesses in Southern Colorado.";
 ---
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<SiteLayout title={title} description={description} active="home">
+	<section class="hero"><div class="section-inner"><div><p class="eyebrow">Security-focused managed IT in Southern Colorado</p><h1>Reliable technology operations without the enterprise runaround.</h1><p class="lead">Cassady Tech Solutions helps small to mid-sized businesses keep devices, accounts, backups, security basics, and daily systems running with steady, practical support.</p><div class="actions"><a class="button" href="/contact">Request managed IT support</a><a class="button secondary" href="/services">View services</a></div></div><div class="ops-panel" aria-label="Service highlights"><div class="logo-showcase"><img src="/assets/brand/official-logo.svg" alt="Cassady Tech Solutions logo" /></div><div class="status-strip"><span class="status-dot" aria-hidden="true"></span><div><strong>Practical tech review</strong><span>A clear look at operational risk, recurring issues, and what to fix first.</span></div><span>Review</span></div><div class="metric-grid"><div class="metric-card"><strong>01</strong><span>Responsive support for business-critical interruptions.</span></div><div class="metric-card"><strong>02</strong><span>Endpoint, account, and patch management guidance.</span></div><div class="metric-card"><strong>03</strong><span>Backup oversight, vendor coordination, and cloud support.</span></div><div class="metric-card"><strong>04</strong><span>Better documentation so operations stay consistent.</span></div></div></div></div></section>
+	<section class="section"><div class="section-inner"><div class="section-heading"><p class="eyebrow">Managed operations</p><h2>Focused support for the systems your organization depends on.</h2><p>Support should feel calm, direct, and grounded in the way each organization actually works.</p></div><div class="grid three"><article class="service-card"><span class="icon">IT</span><h3>Endpoints and devices</h3><p>Setup, troubleshooting, maintenance guidance, software support, and practical lifecycle planning for everyday workstations.</p></article><article class="service-card"><span class="icon">ID</span><h3>Accounts, networks, and cloud tools</h3><p>Wi-Fi, routers, user accounts, email, file sharing, backup oversight, and the cloud services that keep work moving.</p></article><article class="service-card"><span class="icon">SEC</span><h3>Security-aligned workflow support</h3><p>Help with domains, hosting, vendor coordination, form workflows, automation handoffs, and clean technical documentation.</p></article></div></div></section>
+	<section class="section alt"><div class="section-inner"><div class="section-heading"><p class="eyebrow">How it works</p><h2>Simple support with security-minded follow-through.</h2></div><div class="grid three"><article class="timeline-card"><h3>Assess</h3><p>Start with the issue, the business impact, and the systems already in place.</p></article><article class="timeline-card"><h3>Stabilize</h3><p>Fix what is urgent, document the cause, and identify preventable operational or security gaps.</p></article><article class="timeline-card"><h3>Improve</h3><p>Recommend right-sized improvements for continuity, security, and day-to-day operations.</p></article></div></div></section>
+	<section class="section band"><div class="section-inner"><div><h2>Bring a technology problem into focus.</h2><p>Send the basics and Cassady Tech Solutions will help turn the problem into a clear next step.</p></div><a class="button" href="/contact">Request support</a></div></section>
+</SiteLayout>

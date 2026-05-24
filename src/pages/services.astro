@@ -1,0 +1,16 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+const title = "Services | Cassady Tech Solutions";
+const description = "Security-focused managed IT, endpoint support, account security, backup oversight, and vendor coordination for Southern Colorado businesses.";
+const services = [
+	["Endpoint and workstation support", "Keep employee devices usable, secure, maintained, and easier to manage.", ["New computer setup and migration", "Software installation and troubleshooting", "Operational maintenance and repair guidance", "Printer, scanner, and peripheral support"]],
+	["Network, account, and identity support", "Make core access, connectivity, and account security more dependable.", ["Wi-Fi and router troubleshooting", "Email, domain, and account support", "User onboarding and offboarding support", "Backup and recovery oversight"]],
+	["Vendor, web, and workflow help", "Support the public-facing and internal systems tied to business operations.", ["Website updates, domains, and hosting coordination", "Cloudflare Workers and DNS support", "Contact forms and webhook handoffs", "Vendor coordination and automation planning"]],
+	["Documentation and continuity planning", "Reduce repeat problems by turning support work into usable internal reference.", ["Asset and account inventories", "Support notes and standard procedures", "Right-sized improvement recommendations", "Plain-language technical roadmaps"]],
+];
+---
+<SiteLayout title={title} description={description} active="services">
+	<section class="page-title"><div class="section-inner"><p class="eyebrow">Services</p><h1>Security-focused managed IT for practical business needs.</h1><p>Get support for the tools, devices, access, backups, vendors, and technical decisions that shape daily work.</p></div></section>
+	<section class="section"><div class="section-inner grid two">{services.map(([name, text, items]) => <article class="service-card"><span class="icon">IT</span><h2>{name}</h2><p>{text}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></article>)}</div></section>
+	<section class="section band"><div class="section-inner"><div><h2>Need help deciding where to start?</h2><p>Describe the issue, current setup, and business impact. The first response can help shape the next step.</p></div><a class="button" href="/contact">Request support</a></div></section>
+</SiteLayout>
