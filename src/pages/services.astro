@@ -1,16 +1,19 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-const title = "Services | Cassady Tech Solutions";
-const description = "Security-focused managed IT, endpoint support, account security, backup oversight, and vendor coordination for Southern Colorado businesses.";
+const title = "Managed IT Services for Small Businesses | Cassady Tech Solutions";
+const description = "Reliable managed IT support, monitoring, patching, endpoint management, Microsoft 365 support, and backup oversight for Southern Colorado businesses.";
 const services = [
-	["Endpoint and workstation support", "Keep employee devices usable, secure, maintained, and easier to manage.", ["New computer setup and migration", "Software installation and troubleshooting", "Operational maintenance and repair guidance", "Printer, scanner, and peripheral support"]],
-	["Network, account, and identity support", "Make core access, connectivity, and account security more dependable.", ["Wi-Fi and router troubleshooting", "Email, domain, and account support", "User onboarding and offboarding support", "Backup and recovery oversight"]],
-	["Vendor, web, and workflow help", "Support the public-facing and internal systems tied to business operations.", ["Website updates, domains, and hosting coordination", "Cloudflare Workers and DNS support", "Contact forms and webhook handoffs", "Vendor coordination and automation planning"]],
-	["Documentation and continuity planning", "Reduce repeat problems by turning support work into usable internal reference.", ["Asset and account inventories", "Support notes and standard procedures", "Right-sized improvement recommendations", "Plain-language technical roadmaps"]],
+	["Managed IT Support and Operations", "Recurring support designed to keep day-to-day business operations stable and manageable.", ["Help desk and remote support", "System administration support", "Vendor coordination", "Asset and account documentation"]],
+	["Remote Monitoring and Maintenance", "Proactive oversight for workstations, patching, and routine maintenance.", ["Endpoint monitoring", "Patch management", "Routine maintenance", "Issue detection and response guidance"]],
+	["Backup and Disaster Recovery", "Reduce operational risk with monitored backups and practical recovery planning.", ["Backup monitoring", "Recovery validation guidance", "Business continuity planning", "Operational recovery support"]],
+	["Microsoft 365 and Identity Support", "Support for accounts, access, and business productivity systems.", ["Microsoft 365 administration", "MFA and account protection guidance", "User onboarding and offboarding", "Email and identity troubleshooting"]],
+	["Endpoint Protection", "Practical baseline cybersecurity integrated into normal IT operations.", ["Endpoint security oversight", "Security-minded system configuration", "Access cleanup guidance", "Basic risk reduction support"]],
+	["Documentation and Operational Continuity", "Clear documentation that makes future support and troubleshooting easier.", ["Asset inventories", "Vendor and system notes", "Process documentation", "Operational improvement recommendations"]],
 ];
 ---
 <SiteLayout title={title} description={description} active="services">
-	<section class="page-title"><div class="section-inner"><p class="eyebrow">Services</p><h1>Security-focused managed IT for practical business needs.</h1><p>Get support for the tools, devices, access, backups, vendors, and technical decisions that shape daily work.</p></div></section>
+	<section class="page-title"><div class="section-inner"><p class="eyebrow">Managed IT Services</p><h1>Security-focused managed IT for Southern Colorado businesses.</h1><p>Support for devices, Microsoft 365, backups, endpoint protection, documentation, and the systems that keep business operations moving.</p></div></section>
 	<section class="section"><div class="section-inner grid two">{services.map(([name, text, items]) => <article class="service-card"><span class="icon">IT</span><h2>{name}</h2><p>{text}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></article>)}</div></section>
-	<section class="section band"><div class="section-inner"><div><h2>Need help deciding where to start?</h2><p>Describe the issue, current setup, and business impact. The first response can help shape the next step.</p></div><a class="button" href="/contact">Request support</a></div></section>
+	<section class="section alt"><div class="section-inner"><div class="section-heading"><p class="eyebrow">Service area</p><h2>Supporting businesses across Southern Colorado.</h2><p>Managed IT services for Colorado Springs, Pueblo, Fountain, Rye, Walsenburg, and surrounding communities.</p></div></div></section>
+	<section class="section band"><div class="section-inner"><div><h2>Need a clearer IT direction?</h2><p>Start with a practical technology review focused on operations, stability, backups, accounts, and risk reduction.</p></div><a class="button" href="/contact">Request a Technology Review</a></div></section>
 </SiteLayout>
