@@ -13,6 +13,18 @@ const navItems = [
 	{ href: "/contact", label: "Contact", key: "contact" },
 	{ href: "/privacy", label: "Privacy", key: "privacy" },
 ];
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "LocalBusiness",
+	name: "Cassady Tech Solutions",
+	url: "https://cassadytech.com",
+	email: "samuelc@cassadytech.com",
+	telephone: "+1-719-781-2356",
+	areaServed: ["Colorado Springs", "Pueblo", "Fountain", "Rye", "Walsenburg", "Southern Colorado"],
+	description: description,
+	serviceType: "Managed IT Services",
+};
 ---
 
 <!doctype html>
@@ -21,23 +33,26 @@ const navItems = [
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
+		<meta name="keywords" content="Managed IT Services Colorado Springs, IT Support Southern Colorado, Microsoft 365 Support, Endpoint Management, Backup and Disaster Recovery, Security-Focused Managed IT" />
 		<link rel="canonical" href={new URL(Astro.url.pathname, "https://cassadytech.com")} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={new URL(Astro.url.pathname, "https://cassadytech.com")} />
+		<meta name="robots" content="index, follow" />
 		<title>{title}</title>
 		<link rel="icon" href="/assets/brand/official-logo.jpg" type="image/jpeg" />
 		<link rel="stylesheet" href="/assets/css/styles.css" />
+		<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 	</head>
 	<body>
 		<header class="site-header">
 			<div class="nav-wrap">
 				<a class="brand" href="/" aria-label="Cassady Tech Solutions home">
-					<img src="/assets/brand/official-logo.jpg" alt="" />
+					<img src="/assets/brand/official-logo.jpg" alt="Cassady Tech Solutions logo" />
 					<span class="brand-text">
 						<span>Cassady Tech Solutions</span>
-						<span>Managed IT services</span>
+						<span>Security-focused managed IT</span>
 					</span>
 				</a>
 				<button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
@@ -62,12 +77,12 @@ const navItems = [
 		<footer class="site-footer">
 			<div class="section-inner footer-grid">
 				<div>
-					<p class="small">&copy; <span data-year></span> Cassady Tech Solutions. All rights reserved.</p>
-					<p class="small">Security-focused managed IT for Southern Colorado.</p>
+					<p class="small">&copy; <span data-year></span> Cassady Tech Solutions LLC. All rights reserved.</p>
+					<p class="small">Managed IT services and practical cybersecurity support for Southern Colorado businesses.</p>
 				</div>
 				<div class="footer-meta">
 					<nav class="footer-links" aria-label="Footer navigation">
-						<a href="/services">Services</a>
+						<a href="/services">Managed IT Services</a>
 						<a href="/contact">Contact</a>
 						<a href="/privacy">Privacy</a>
 					</nav>
