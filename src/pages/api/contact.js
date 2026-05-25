@@ -6,30 +6,17 @@ const json = (body, init = {}) => new Response(JSON.stringify(body), { ...init, 
 const clean = (value, maxLength = 240) => String(value || "").trim().slice(0, maxLength);
 
 function validatePayload(payload) {
-	const lead = { name: clean(payload.name, 120), email: clean(payload.email, 180).toLowerCase(), phone: clean(payload.phone, 40), company: clean(payload.company, 160), service: clean(payload.service, 120), message: clean(payload.message, MAX_MESSAGE_LENGTH), website: clean(payload.website, 200), turnstileToken: clean(payload.turnstileToken, 4096) };
+	const lead = { name: clean(payload.name, 120), email: clean(payload.email, 180).toLowerCase(), phone: clean(payload.phone, 40), company: clean(payload.company, 160), service: clean(payload.service, 120), message: clean(payload.message, MAX_MESSAGE_LENGTH), website: clean(payload.website, 200) };
 	if (lead.website) return { lead, error: "Thanks. Your request was received." };
 	if (!lead.name || !lead.email || !lead.service || !lead.message) return { lead, error: "Please complete the required fields." };
 	if (!EMAIL_PATTERN.test(lead.email)) return { lead, error: "Please enter a valid email address." };
 	if (lead.message.length < 10) return { lead, error: "Please add a little more detail to your message." };
-	if (!lead.turnstileToken) return { lead, error: "Please complete the verification check." };
 	return { lead };
 }
 
 function requireEnv() {
-	const missing = ["TURNSTILE_SECRET_KEY", "RESEND_API_KEY", "CONTACT_TO_EMAIL", "CONTACT_FROM_EMAIL"].filter((key) => !env[key]);
+	const missing = ["RESEND_API_KEY", "CONTACT_TO_EMAIL", "CONTACT_FROM_EMAIL"].filter((key) => !env[key]);
 	return missing.length ? `Missing required form configuration: ${missing.join(", ")}` : "";
-}
-
-async function verifyTurnstile(token, request) {
-	const formData = new FormData();
-	formData.append("secret", env.TURNSTILE_SECRET_KEY);
-	formData.append("response", token);
-	const ip = request.headers.get("CF-Connecting-IP");
-	if (ip) formData.append("remoteip", ip);
-	const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: formData });
-	if (!response.ok) return false;
-	const result = await response.json();
-	return Boolean(result.success);
 }
 
 function buildLeadPayload(lead, request) {
@@ -67,7 +54,6 @@ export async function POST({ request }) {
 	const { lead, error } = validatePayload(payload);
 	if (lead.website) return json({ ok: true });
 	if (error) return json({ message: error }, { status: 400 });
-	if (!(await verifyTurnstile(lead.turnstileToken, request))) return json({ message: "Verification failed. Please try again." }, { status: 400 });
 	const leadPayload = buildLeadPayload(lead, request);
 	try { await sendEmail(leadPayload); } catch (emailError) { console.error(emailError); return json({ message: "The form could not send right now. Please try again shortly." }, { status: 502 }); }
 	try { await sendWebhook(leadPayload); } catch (webhookError) { console.error(webhookError); }
