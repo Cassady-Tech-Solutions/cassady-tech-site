@@ -1,98 +1,105 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 
-const title = "Cassady Tech Solutions | Security-Focused Managed IT";
-const description = "Cassady Tech Solutions provides security-focused managed IT and cybersecurity services for small to mid-sized businesses in Southern Colorado.";
+const title = "Managed IT Services in Southern Colorado | Cassady Tech Solutions";
+const description = "Security-focused managed IT support for small businesses in Colorado Springs, Pueblo, Rye, Walsenburg, and surrounding areas.";
+const plans = [
+  ["Starter / Essentials", "$60/user", "Intro or budget-conscious clients", "Basic monitoring, patching, endpoint protection, and limited remote support."],
+  ["Basic", "$75/user", "Small offices needing core support", "Managed IT, monitoring, patching, help desk support, and foundational protection."],
+  ["Standard", "$125/user", "Growing businesses", "Backup management, stronger identity support, and broader proactive maintenance."],
+  ["Premium", "$175/user", "Higher-touch environments", "Priority support, strategic guidance, stronger security alignment, and faster response targets."],
+];
 ---
 
 <SiteLayout title={title} description={description} active="home">
 <section class="hero">
-        <div class="section-inner">
-          <div>
-            <p class="eyebrow">Security-focused managed IT in Southern Colorado</p>
-            <h1>Reliable technology operations without the enterprise runaround.</h1>
-            <p class="lead">Cassady Tech Solutions helps small to mid-sized businesses keep devices, accounts, backups, security basics, and daily systems running with steady, practical support.</p>
-            <div class="actions">
-              <a class="button" href="/contact">Request managed IT support</a>
-              <a class="button secondary" href="/services">View services</a>
-            </div>
-          </div>
-          <div class="ops-panel" aria-label="Service highlights">
-            <div class="logo-showcase">
-              <img src="/assets/brand/official-logo.jpg" alt="Cassady Tech Solutions logo">
-            </div>
-            <div class="status-strip service-summary">
-              <span class="status-dot" aria-hidden="true"></span>
-              <div><strong>Practical tech review</strong><span>A clear look at operational risk, recurring issues, and what to fix first.</span></div>
-              <span>Review</span>
-            </div>
-            <div class="metric-grid">
-              <div class="metric-card"><strong>01</strong><span>Responsive support for business-critical interruptions.</span></div>
-              <div class="metric-card"><strong>02</strong><span>Endpoint, account, and patch management guidance.</span></div>
-              <div class="metric-card"><strong>03</strong><span>Backup oversight, vendor coordination, and cloud support.</span></div>
-              <div class="metric-card"><strong>04</strong><span>Better documentation so operations stay consistent.</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="section-inner">
+    <div>
+      <p class="eyebrow">Managed IT services for Southern Colorado businesses</p>
+      <h1>Managed IT and security-focused IT support for small businesses.</h1>
+      <p class="lead">Cassady Tech Solutions helps small businesses manage devices, Microsoft 365, backups, networks, endpoint protection, and day-to-day technology operations without the enterprise runaround.</p>
+      <div class="actions">
+        <a class="button" href="/contact">Schedule a Technology Review</a>
+        <a class="button secondary" href="/services">View Managed IT Services</a>
+      </div>
+      <div class="trust-strip" aria-label="Cassady Tech service strengths">
+        <span>Local Southern Colorado support</span>
+        <span>Remote-first service delivery</span>
+        <span>Proactive monitoring and maintenance</span>
+        <span>Practical cybersecurity built into IT operations</span>
+      </div>
+    </div>
+    <div class="ops-panel" aria-label="Service highlights">
+      <div class="logo-showcase">
+        <img src="/assets/brand/official-logo.jpg" alt="Cassady Tech Solutions security-focused managed IT logo">
+      </div>
+      <div class="status-strip service-summary">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div><strong>Technology Review</strong><span>A clear look at operational risk, recurring issues, backups, accounts, and what to fix first.</span></div>
+        <span>Review</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <section class="section">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">Managed operations</p>
-            <h2>Focused support for the systems your organization depends on.</h2>
-            <p>Support should feel calm, direct, and grounded in the way each organization actually works.</p>
-          </div>
-          <div class="grid three">
-            <article class="service-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H4zM8 19h8M10 15v4M14 15v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>Endpoints and devices</h3>
-              <p>Setup, troubleshooting, maintenance guidance, software support, and practical lifecycle planning for everyday workstations.</p>
-            </article>
-            <article class="service-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v6M6 21v-5a6 6 0 0 1 12 0v5M6 15h12M8 9h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>Accounts, networks, and cloud tools</h3>
-              <p>Wi-Fi, routers, user accounts, email, file sharing, backup oversight, and the cloud services that keep work moving.</p>
-            </article>
-            <article class="service-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>Security-aligned workflow support</h3>
-              <p>Help with domains, hosting, vendor coordination, form workflows, automation handoffs, and clean technical documentation.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">Business IT problems</p>
+      <h2>Technology should not slow down your business.</h2>
+      <p>Most small businesses do not need enterprise complexity. They need stable systems, clear access, monitored devices, reliable backups, and a practical security baseline.</p>
+    </div>
+    <div class="grid three pain-grid">
+      {["Recurring computer issues and slow systems", "Account access problems and password confusion", "Unclear backup status or no disaster recovery plan", "Vendor, domain, hosting, or Microsoft 365 confusion", "No consistent documentation for systems, users, or devices", "Security concerns without a realistic starting point"].map((item) => <article class="value-card"><h3>{item}</h3></article>)}
+    </div>
+  </div>
+</section>
 
-      <section class="section alt">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">How it works</p>
-            <h2>Simple support with security-minded follow-through.</h2>
-          </div>
-          <div class="grid three">
-            <article class="timeline-card">
-              <h3>Assess</h3>
-              <p>Start with the issue, the business impact, and the systems already in place.</p>
-            </article>
-            <article class="timeline-card">
-              <h3>Stabilize</h3>
-              <p>Fix what is urgent, document the cause, and identify preventable operational or security gaps.</p>
-            </article>
-            <article class="timeline-card">
-              <h3>Improve</h3>
-              <p>Recommend right-sized improvements for continuity, security, and day-to-day operations.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+<section class="section alt">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">Commercial managed IT</p>
+      <h2>Focused support for the systems your organization depends on.</h2>
+      <p>Recurring managed IT support, monitoring, maintenance, backup oversight, account security, endpoint protection, and practical documentation for small business operations.</p>
+    </div>
+    <div class="grid three">
+      <article class="service-card"><span class="icon">IT</span><h3>Managed IT Support and Operations</h3><p>Help desk support, system administration, vendor coordination, documentation, and day-to-day technology support.</p></article>
+      <article class="service-card"><span class="icon">RM</span><h3>Remote Monitoring and Maintenance</h3><p>Endpoint monitoring, routine maintenance, patching, and proactive issue detection.</p></article>
+      <article class="service-card"><span class="icon">BD</span><h3>Backup and Disaster Recovery</h3><p>Backup management, recovery planning, monitoring, and business continuity support.</p></article>
+      <article class="service-card"><span class="icon">365</span><h3>Account and Identity Security</h3><p>Microsoft 365 support, account protection, MFA guidance, access cleanup, and basic risk reduction.</p></article>
+      <article class="service-card"><span class="icon">EP</span><h3>Endpoint Protection</h3><p>Baseline endpoint security, protection oversight, and security-minded configuration support.</p></article>
+      <article class="service-card"><span class="icon">DOC</span><h3>Documentation and Vendor Coordination</h3><p>Asset inventories, account maps, vendor notes, and process documentation that make support more consistent.</p></article>
+    </div>
+  </div>
+</section>
 
-      <section class="section band">
-        <div class="section-inner">
-          <div>
-            <h2>Bring a technology problem into focus.</h2>
-            <p>Send the basics and Cassady Tech Solutions will help turn the problem into a clear next step.</p>
-          </div>
-          <a class="button" href="/contact">Request support</a>
-        </div>
-      </section>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">Managed service plans</p>
+      <h2>Simple commercial plan options.</h2>
+      <p>Start with the support level that matches your business today, then mature your operations over time.</p>
+    </div>
+    <div class="plan-grid">
+      {plans.map(([name, price, fit, summary]) => <article class="plan-card"><h3>{name}</h3><p class="plan-price">{price}</p><p><strong>Best fit:</strong> {fit}</p><p>{summary}</p></article>)}
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="section-inner grid two">
+    <div class="content-block"><p class="eyebrow">Who we support</p><h2>Built for small businesses that need dependable IT without unnecessary complexity.</h2><p>Cassady Tech Solutions is a fit for small offices, nonprofits, professional services, local organizations, and hybrid teams that need recurring technology support with practical security built in.</p></div>
+    <div class="content-block"><p class="eyebrow">Service area</p><h2>Serving Southern Colorado businesses.</h2><p>Serving small businesses across Southern Colorado, including Colorado Springs, Fountain, Pueblo, Rye, Walsenburg, and surrounding communities.</p></div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="section-inner">
+    <div>
+      <h2>Schedule a practical technology review.</h2>
+      <p>Bring recurring issues, Microsoft 365 confusion, backup uncertainty, endpoint concerns, or vendor problems into focus.</p>
+    </div>
+    <a class="button" href="/contact">Schedule a Technology Review</a>
+  </div>
+</section>
 </SiteLayout>
