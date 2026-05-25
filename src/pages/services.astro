@@ -13,7 +13,7 @@ const services = [
 ---
 <SiteLayout title={title} description={description} active="services">
 	<section class="page-title"><div class="section-inner"><p class="eyebrow">Managed IT Services</p><h1>Security-focused managed IT for Southern Colorado businesses.</h1><p>Support for devices, Microsoft 365, backups, endpoint protection, documentation, and the systems that keep business operations moving.</p></div></section>
-	<section class="section"><div class="section-inner grid two">{services.map(([name, text, items]) => <article class="service-card"><span class="icon">IT</span><h2>{name}</h2><p>{text}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></article>)}</div></section>
+	<section class="section"><div class="section-inner grid two">{services.map(([name, text, items]) => <article class="service-card"><h2>{name}</h2><p>{text}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></article>)}</div></section>
 	<section class="section alt"><div class="section-inner"><div class="section-heading"><p class="eyebrow">Service area</p><h2>Supporting businesses across Southern Colorado.</h2><p>Managed IT services for Colorado Springs, Pueblo, Fountain, Rye, Walsenburg, and surrounding communities.</p></div></div></section>
 	<section class="section band"><div class="section-inner"><div><h2>Need a clearer IT direction?</h2><p>Start with a practical technology review focused on operations, stability, backups, accounts, and risk reduction.</p></div><a class="button" href="/contact">Request a Technology Review</a></div></section>
 </SiteLayout>
