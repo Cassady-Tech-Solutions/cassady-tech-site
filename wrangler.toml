@@ -1,0 +1,9 @@
+name = "cassady-tech-site"
+main = "./dist/_worker.js/index.js"
+compatibility_date = "2026-05-25"
+compatibility_flags = ["nodejs_compat"]
+assets = { directory = "./dist", binding = "ASSETS" }
+
+[vars]
+PUBLIC_SITE_URL = "https://cassadytech.com"
+BUSINESS_NAME = "Cassady Tech Solutions"
