@@ -12,7 +12,7 @@ function getEnv(locals) {
 function getConfig(env) {
 	return {
 		resendApiKey: env.RESEND_API_KEY,
-		toEmail: env.CONTACT_TO_EMAIL || env.CONTACT_TO || "samuelc@cassadytech.com",
+		toEmail: env.CONTACT_TO_EMAIL || env.CONTACT_TO || "contact@cassadytech.com",
 		fromEmail: env.CONTACT_FROM_EMAIL || env.CONTACT_FROM || "Cassady Tech Solutions <contact@cassadytech.com>",
 		webhookUrl: env.CONTACT_WEBHOOK_URL,
 		webhookSecret: env.CONTACT_WEBHOOK_SECRET,
