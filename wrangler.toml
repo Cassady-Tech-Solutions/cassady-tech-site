@@ -11,4 +11,4 @@ BUSINESS_NAME = "Cassady Tech Solutions"
 BUSINESS_EMAIL = "samuelc@cassadytech.com"
 
 CONTACT_TO_EMAIL = "samuelc@cassadytech.com"
-CONTACT_FROM_EMAIL = "Cassady Tech Solutions <onboarding@resend.dev>"
+CONTACT_FROM_EMAIL = Cassady Tech Solutions <contact@cassadytech.com>
