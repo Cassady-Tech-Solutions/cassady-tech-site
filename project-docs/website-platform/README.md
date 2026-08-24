@@ -4,6 +4,10 @@ This folder contains the operational and technical documentation for the Cassady
 
 The goal is to keep website administration, deployment, Cloudflare runtime details, and operational knowledge separate from the production application files used by Astro and Cloudflare Workers.
 
+## Related planning
+
+- [Website rebuild plan](../website-rebuild-plan/README.md): Living strategy for the future Cassady Tech Solutions and Greenhorn Valley Tech repositioning and redesign.
+
 ## Start Here
 
 - [ADMINISTRATION.md](./ADMINISTRATION.md): How the website is actually managed, including human responsibilities, automation, and AI-assisted work.
