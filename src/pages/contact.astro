@@ -1,10 +1,41 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-const title = "Contact | Cassady Tech Solutions";
-const description = "Contact Cassady Tech Solutions for security-focused managed IT support in Southern Colorado.";
+
+const title = "Schedule a Technology Review | Cassady Tech Solutions";
+const description = "Start a practical technology conversation about operations, security, Microsoft 365, automation, or AI adoption.";
 ---
+
 <SiteLayout title={title} description={description} active="contact">
-	<section class="page-title"><div class="section-inner"><p class="eyebrow">Contact</p><h1>Start a managed IT conversation.</h1><p>Share the business context, technical symptoms, and support priorities. Cassady Tech Solutions will use that information to shape a practical next step.</p></div></section>
-	<section class="section"><div class="section-inner contact-layout"><div class="contact-list"><article class="contact-card direct-contact"><h2>Direct contact</h2><p><a href="mailto:samuelc@cassadytech.com">samuelc@cassadytech.com</a></p><p><a href="tel:+17197812356">719-781-2356</a></p><p>Serving Southern Colorado.</p></article><article class="contact-card"><h2>What to include</h2><p>Helpful details include affected devices, accounts, tools involved, recent changes, deadlines, error messages, and whether the issue is blocking work right now.</p></article><article class="contact-card"><h2>Good fit</h2><p>Small to mid-sized businesses needing managed IT support, endpoint help, account access support, backup awareness, website or hosting guidance, and vendor coordination.</p></article></div>
-	<form class="form-card" method="post" action="/api/contact" data-contact-form><div class="form-grid"><div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required maxlength="120" /></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="180" /></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" /></div><div class="field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization" maxlength="160" /></div><div class="field full"><label for="service">Support area</label><select id="service" name="service" required><option value="">Select one</option><option>Managed IT support</option><option>Device or workstation issue</option><option>Network, cloud, or account security help</option><option>Backup or continuity concern</option><option>Website, domain, or hosting support</option><option>Vendor, workflow, or automation handoff</option><option>Not sure yet</option></select></div><div class="field full"><label for="message">How can Cassady Tech Solutions help?</label><textarea id="message" name="message" required minlength="10" maxlength="2000"></textarea></div><div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off" /></div><div class="field full"><button class="button" type="submit">Send request</button><p class="form-note">Your request will be sent directly to Cassady Tech Solutions.</p><p class="form-status" role="status" aria-live="polite" data-form-status></p></div></div></form></div></section>
+	<section class="page-title page-title-dark contact-title">
+		<div class="section-inner page-title-grid">
+			<div><p class="eyebrow eyebrow-light">Start a conversation</p><h1>Tell us what is creating friction.</h1><p>A technology review is a working conversation about what your organization depends on, what keeps getting in the way, and what would be worth improving next.</p></div>
+			<div class="contact-prompt"><span>GOOD FIRST TOPICS</span><strong>Recurring issues<br />Unclear risk<br />AI or automation questions</strong></div>
+		</div>
+	</section>
+
+	<section class="section contact-section">
+		<div class="section-inner contact-layout">
+			<div class="contact-aside">
+				<p class="eyebrow">Before you send this</p>
+				<h2>You do not need to know the technical answer yet.</h2>
+				<p>Useful context includes what the organization does, how many people rely on the systems, what changed, and what you wish was easier. A rough description is enough to start.</p>
+				<div class="direct-contact"><span class="direct-label">Prefer a direct conversation?</span><a href="tel:+17197812356">719-781-2356</a><a href="mailto:samuelc@cassadytech.com">samuelc@cassadytech.com</a></div>
+			</div>
+			<form class="form-card" method="post" action="/api/contact" data-contact-form>
+				<div class="form-card-header"><span>TECHNOLOGY REVIEW REQUEST</span><span class="card-index">CTS / 02</span></div>
+				<div class="form-grid">
+					<div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required maxlength="120" /></div>
+					<div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="180" /></div>
+					<div class="field"><label for="phone">Phone <span>(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" /></div>
+					<div class="field"><label for="company">Organization</label><input id="company" name="company" autocomplete="organization" maxlength="160" /></div>
+					<div class="field full"><label for="service">What would you like to talk through?</label><select id="service" name="service" required><option value="">Select one</option><option>Technology review and roadmap</option><option>Ongoing technology operations</option><option>Microsoft 365, accounts, or identity</option><option>Security, backup, or continuity concern</option><option>AI or automation enablement</option><option>Defined project or advisory work</option><option>Not sure yet</option></select></div>
+					<div class="field full"><label for="message">What is happening?</label><textarea id="message" name="message" required minlength="10" maxlength="2000" placeholder="A few sentences about the organization, the friction, or the decision you are facing."></textarea></div>
+					<div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off" /></div>
+					<div class="field full"><button class="button" type="submit">Send the request</button><p class="form-note">We will use the information you provide to respond about this request.</p><p class="form-status" role="status" aria-live="polite" data-form-status></p></div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section class="section contact-boundary"><div class="section-inner contact-boundary-inner"><p class="eyebrow">What happens next</p><div><h2>First, we decide whether a conversation is useful.</h2><p>If there is a fit, we will define a sensible next step. That might be an assessment, a scoped project, ongoing support, or an honest recommendation to start somewhere else.</p></div></div></section>
 </SiteLayout>

@@ -1,19 +1,74 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-const title = "Managed IT Services for Small Businesses | Cassady Tech Solutions";
-const description = "Reliable managed IT support, monitoring, patching, endpoint management, Microsoft 365 support, and backup oversight for Southern Colorado businesses.";
-const services = [
-	["Managed IT Support and Operations", "Recurring support designed to keep day-to-day business operations stable and manageable.", ["Help desk and remote support", "System administration support", "Vendor coordination", "Asset and account documentation"]],
-	["Remote Monitoring and Maintenance", "Proactive oversight for workstations, patching, and routine maintenance.", ["Endpoint monitoring", "Patch management", "Routine maintenance", "Issue detection and response guidance"]],
-	["Backup and Disaster Recovery", "Reduce operational risk with monitored backups and practical recovery planning.", ["Backup monitoring", "Recovery validation guidance", "Business continuity planning", "Operational recovery support"]],
-	["Microsoft 365 and Identity Support", "Support for accounts, access, and business productivity systems.", ["Microsoft 365 administration", "MFA and account protection guidance", "User onboarding and offboarding", "Email and identity troubleshooting"]],
-	["Endpoint Protection", "Practical baseline cybersecurity integrated into normal IT operations.", ["Endpoint security oversight", "Security-minded system configuration", "Access cleanup guidance", "Basic risk reduction support"]],
-	["Documentation and Operational Continuity", "Clear documentation that makes future support and troubleshooting easier.", ["Asset inventories", "Vendor and system notes", "Process documentation", "Operational improvement recommendations"]],
+
+const title = "How We Help | Cassady Tech Solutions";
+const description = "Technology operations, practical cybersecurity, Microsoft 365 support, automation, and AI enablement for small organizations.";
+
+const serviceAreas = [
+	{
+		number: "01",
+		title: "Technology foundation",
+		intro: "Understand what exists before making another change.",
+		body: "A foundation engagement creates a usable picture of the organization: users, devices, accounts, Microsoft 365, backups, vendors, network dependencies, documentation, and the risks that deserve attention first.",
+		items: ["Current-state inventory", "Account and identity review", "Backup and recovery review", "Prioritized improvement roadmap"],
+	},
+	{
+		number: "02",
+		title: "Managed technology operations",
+		intro: "Keep the everyday systems steady and explainable.",
+		body: "Ongoing support is shaped around the organization rather than a generic package. The work may include remote support, endpoint and patch oversight, Microsoft 365 administration, vendor coordination, documentation, and recurring technology reviews.",
+		items: ["User and device support", "Microsoft 365 and account administration", "Endpoint and patch oversight", "Vendor and documentation coordination"],
+	},
+	{
+		number: "03",
+		title: "AI and automation enablement",
+		intro: "Find the useful use case before buying another tool.",
+		body: "We help organizations decide where AI or automation can reduce repetitive work without losing control of sensitive information, quality, or accountability. The first step is usually a workflow conversation, not a platform pitch.",
+		items: ["Workflow and use-case discovery", "Tool and integration evaluation", "Safe configuration and data boundaries", "Staff enablement and review"],
+	},
+	{
+		number: "04",
+		title: "Projects and advisory work",
+		intro: "Bring a defined outcome into focus.",
+		body: "Some work is best handled as a project: a migration, implementation, recovery plan, workflow redesign, documentation effort, or second opinion on an important technology decision.",
+		items: ["Migrations and implementations", "Recovery and continuity planning", "Workflow redesign", "Technology decisions and second opinions"],
+	},
 ];
 ---
+
 <SiteLayout title={title} description={description} active="services">
-	<section class="page-title"><div class="section-inner"><p class="eyebrow">Managed IT Services</p><h1>Security-focused managed IT for Southern Colorado businesses.</h1><p>Support for devices, Microsoft 365, backups, endpoint protection, documentation, and the systems that keep business operations moving.</p></div></section>
-	<section class="section"><div class="section-inner grid two">{services.map(([name, text, items]) => <article class="service-card"><h2>{name}</h2><p>{text}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></article>)}</div></section>
-	<section class="section alt"><div class="section-inner"><div class="section-heading"><p class="eyebrow">Service area</p><h2>Supporting businesses across Southern Colorado.</h2><p>Managed IT services for Colorado Springs, Pueblo, Fountain, Rye, Walsenburg, and surrounding communities.</p></div></div></section>
-	<section class="section band"><div class="section-inner"><div><h2>Need a clearer IT direction?</h2><p>Start with a practical technology review focused on operations, stability, backups, accounts, and risk reduction.</p></div><a class="button" href="/contact">Request a Technology Review</a></div></section>
+	<section class="page-title page-title-dark">
+		<div class="section-inner page-title-grid">
+			<div><p class="eyebrow eyebrow-light">How we help</p><h1>Technology work for organizations that need a clearer next move.</h1><p>Our work sits between day-to-day IT support and long-term technology strategy. We help keep the basics steady while making room for useful improvement.</p></div>
+			<div class="page-marker"><span>CTS / 01</span><strong>Operations<br />with context</strong></div>
+		</div>
+	</section>
+
+	<section class="section service-areas-section">
+		<div class="section-inner">
+			<div class="section-heading wide-heading"><p class="eyebrow">Four ways to start</p><h2>The right engagement depends on what the organization needs next.</h2><p>These are service areas, not locked packages. We scope the work around the environment, the outcome, and the level of support you can realistically use.</p></div>
+			<div class="service-rail">
+				{serviceAreas.map((service) => (
+					<article class="service-rail-row">
+						<div class="service-rail-number">{service.number}</div>
+						<div class="service-rail-main"><h2>{service.title}</h2><p class="service-intro">{service.intro}</p><p>{service.body}</p></div>
+						<ul class="service-includes">{service.items.map((item) => <li><span>+</span>{item}</li>)}</ul>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section alt-section engagement-section">
+		<div class="section-inner engagement-grid">
+			<div class="section-heading"><p class="eyebrow">A sensible starting point</p><h2>We do not need a perfect brief before the first conversation.</h2><p>Bring the symptoms, the decisions you are avoiding, or the work that keeps landing on the wrong person. We can help sort the problem before recommending a solution.</p></div>
+			<div class="engagement-notes"><article><span>1</span><div><h3>Listen for the operating problem</h3><p>What is slowing work, creating avoidable risk, or consuming more attention than it should?</p></div></article><article><span>2</span><div><h3>Define the useful boundary</h3><p>What belongs in a quick fix, a project, ongoing support, or a decision that needs more research?</p></div></article><article><span>3</span><div><h3>Agree on the next piece of work</h3><p>You should know what happens next, what it will require, and what is outside the scope.</p></div></article></div>
+		</div>
+	</section>
+
+	<section class="section not-fit-section">
+		<div class="section-inner not-fit-grid"><div><p class="eyebrow">What we do not sell</p><h2>Confidence theater.</h2></div><div><p>We do not use enterprise-sounding promises to make a small organization feel underprotected. We will not claim guaranteed protection, 24/7 coverage, formal compliance consulting, or autonomous AI transformation unless a specific engagement genuinely supports that claim.</p><p>Good technology work includes knowing what is not being promised.</p></div></div>
+	</section>
+
+	<section class="band"><div class="section-inner band-inner"><div><p class="eyebrow eyebrow-light">Have a question about fit?</p><h2>Start with the situation as it is.</h2><p>We can talk through the current setup, the pressure point, and the most useful next step.</p></div><a class="button button-light" href="/contact">Start a technology conversation</a></div></section>
 </SiteLayout>

@@ -7,23 +7,21 @@ interface Props {
 
 const { title, description, active = "home" } = Astro.props;
 const navItems = [
-	{ href: "/", label: "Home", key: "home" },
-	{ href: "/services", label: "Services", key: "services" },
-	{ href: "/about", label: "About", key: "about" },
+	{ href: "/services", label: "How we help", key: "services" },
+	{ href: "/about", label: "Our approach", key: "about" },
 	{ href: "/contact", label: "Contact", key: "contact" },
-	{ href: "/privacy", label: "Privacy", key: "privacy" },
 ];
 
 const schema = {
 	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
+	"@type": "ProfessionalService",
 	name: "Cassady Tech Solutions",
 	url: "https://cassadytech.com",
 	email: "samuelc@cassadytech.com",
 	telephone: "+1-719-781-2356",
 	areaServed: ["Colorado Springs", "Pueblo", "Fountain", "Rye", "Walsenburg", "Southern Colorado"],
-	description: description,
-	serviceType: "Managed IT Services",
+	description,
+	serviceType: ["Managed technology operations", "Cybersecurity support", "AI and automation enablement"],
 };
 ---
 
@@ -33,12 +31,18 @@ const schema = {
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
-		<meta name="keywords" content="Managed IT Services Colorado Springs, IT Support Southern Colorado, Microsoft 365 Support, Endpoint Management, Backup and Disaster Recovery, Security-Focused Managed IT" />
+		<meta name="keywords" content="technology partner Southern Colorado, small business IT support, Microsoft 365 support, cybersecurity support, AI integration small business" />
 		<link rel="canonical" href={new URL(Astro.url.pathname, "https://cassadytech.com")} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={new URL(Astro.url.pathname, "https://cassadytech.com")} />
+		<meta property="og:image" content="https://cassadytech.com/assets/brand/official-logo.jpg" />
+		<meta property="og:image:alt" content="Cassady Tech Solutions mountain and technology logo" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="https://cassadytech.com/assets/brand/official-logo.jpg" />
 		<meta name="robots" content="index, follow" />
 		<title>{title}</title>
 		<link rel="icon" href="/assets/brand/official-logo.jpg" type="image/jpeg" />
@@ -49,23 +53,20 @@ const schema = {
 		<header class="site-header">
 			<div class="nav-wrap">
 				<a class="brand" href="/" aria-label="Cassady Tech Solutions home">
-					<img src="/assets/brand/official-logo.jpg" alt="Cassady Tech Solutions logo" />
+					<img src="/assets/brand/official-logo.jpg" alt="" />
 					<span class="brand-text">
 						<span>Cassady Tech Solutions</span>
-						<span>Security-focused managed IT</span>
+						<span>Technology for organizations</span>
 					</span>
 				</a>
 				<button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
 					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
 				</button>
 				<nav class="site-nav" aria-label="Primary navigation" data-site-nav>
-					{
-						navItems.map((item) => (
-							<a class:list={{ "is-active": active === item.key }} href={item.href}>
-								{item.label}
-							</a>
-						))
-					}
+					{navItems.map((item) => (
+						<a class:list={{ "is-active": active === item.key }} href={item.href}>{item.label}</a>
+					))}
+					<a class="nav-cta" href="/contact">Schedule a review</a>
 				</nav>
 			</div>
 		</header>
@@ -76,22 +77,27 @@ const schema = {
 
 		<footer class="site-footer">
 			<div class="section-inner footer-grid">
-				<div>
-					<p class="small">&copy; <span data-year></span> Cassady Tech Solutions LLC. All rights reserved.</p>
-					<p class="small">Managed IT services and practical cybersecurity support for Southern Colorado businesses.</p>
+				<div class="footer-intro">
+					<a class="footer-brand" href="/">Cassady Tech Solutions</a>
+					<p class="small">Technology for organizations. Practical operations, safer systems, and thoughtful modernization for Southern Colorado.</p>
 				</div>
-				<div class="footer-meta">
+				<div>
+					<p class="footer-label">Explore</p>
 					<nav class="footer-links" aria-label="Footer navigation">
-						<a href="/services">Managed IT Services</a>
+						<a href="/services">How we help</a>
+						<a href="/about">Our approach</a>
 						<a href="/contact">Contact</a>
 						<a href="/privacy">Privacy</a>
 					</nav>
-					<p class="small">
-						<a href="mailto:samuelc@cassadytech.com">samuelc@cassadytech.com</a>
-						<span aria-hidden="true">|</span>
-						<a href="tel:+17197812356">719-781-2356</a>
-					</p>
 				</div>
+				<div>
+					<p class="footer-label">Start a conversation</p>
+					<p class="small"><a href="mailto:samuelc@cassadytech.com">samuelc@cassadytech.com</a><br /><a href="tel:+17197812356">719-781-2356</a></p>
+				</div>
+			</div>
+			<div class="section-inner legal-row">
+				<p class="small">&copy; <span data-year></span> Cassady Tech Solutions LLC. Greenhorn Valley Tech is the residential brand.</p>
+				<p class="small">Southern Colorado and remote-first service.</p>
 			</div>
 		</footer>
 		<script is:inline src="/assets/js/site.js"></script>

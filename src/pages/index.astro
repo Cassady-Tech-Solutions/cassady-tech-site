@@ -1,100 +1,124 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 
-const title = "Managed IT Services in Southern Colorado | Cassady Tech Solutions";
-const description = "Security-focused managed IT support for small businesses in Colorado Springs, Pueblo, Rye, Walsenburg, and surrounding areas.";
-const plans = [
-  ["Starter / Essentials", "$60/user", "Intro or budget-conscious clients", "Basic monitoring, patching, endpoint protection, and limited remote support."],
-  ["Basic", "$75/user", "Small offices needing core support", "Managed IT, monitoring, patching, help desk support, and foundational protection."],
-  ["Standard", "$125/user", "Growing businesses", "Backup management, stronger identity support, and broader proactive maintenance."],
-  ["Premium", "$175/user", "Higher-touch environments", "Priority support, strategic guidance, stronger security alignment, and faster response targets."],
+const title = "Technology for Organizations | Cassady Tech Solutions";
+const description = "Cassady Tech Solutions is a practical technology partner for 5 to 50 person organizations in Southern Colorado and beyond.";
+
+const friction = [
+	["Work gets stuck", "Recurring device, account, network, or cloud problems keep pulling leadership into technical details."],
+	["Nobody has the whole picture", "Vendors, subscriptions, backups, users, and systems grow faster than the documentation."],
+	["Modernization feels risky", "AI and automation sound useful, but the organization needs a safe place to start and someone to think it through."],
+];
+
+const relationship = [
+	["Get oriented", "We learn how the organization actually works, what technology it depends on, and where friction or risk is accumulating."],
+	["Make it steadier", "We handle practical improvements across devices, accounts, Microsoft 365, backups, vendors, and documentation."],
+	["Improve with intention", "When a new tool, workflow, automation, or AI use case makes sense, we help shape it around the work and the boundaries."],
 ];
 ---
 
 <SiteLayout title={title} description={description} active="home">
-<section class="hero">
-  <div class="section-inner">
-    <div>
-      <p class="eyebrow">Managed IT services for Southern Colorado businesses</p>
-      <h1>Security-Centric Managed IT and Support Services for Small Businesses</h1>
-      <p class="lead">Cassady Tech Solutions helps small businesses manage devices, Microsoft 365, backups, networks, endpoint protection, and day-to-day technology operations without the enterprise runaround.</p>
-      <div class="actions">
-        <a class="button" href="/contact">Schedule a Technology Review</a>
-        <a class="button secondary" href="/services">View Managed IT Services</a>
-      </div>
-      <div class="trust-strip" aria-label="Cassady Tech service strengths">
-        <span>Local Southern Colorado support</span>
-        <span>Remote-first service delivery</span>
-        <span>Proactive monitoring and maintenance</span>
-        <span>Practical cybersecurity built into IT operations</span>
-      </div>
-    </div>
-    <div class="ops-panel" aria-label="Service highlights">
-      <div class="logo-showcase">
-        <img src="/assets/brand/official-logo.jpg" alt="Cassady Tech Solutions security-focused managed IT logo">
-      </div>
-    </div>
-  </div>
-</section>
+	<section class="hero hero-cts">
+		<div class="section-inner hero-inner">
+			<div class="hero-copy">
+				<p class="eyebrow">Technology for organizations</p>
+				<h1>Your technology should help the work move.</h1>
+				<p class="lead">Cassady Tech Solutions gives small organizations a dependable technology partner for day-to-day operations, practical security, and thoughtful modernization.</p>
+				<div class="actions">
+					<a class="button" href="/contact">Schedule a technology review</a>
+					<a class="button secondary" href="/services">See how we help</a>
+				</div>
+				<p class="hero-note-line"><span class="signal-dot"></span>Built for organizations with roughly 5 to 50 people and real work to protect.</p>
+			</div>
+			<div class="hero-side">
+				<div class="hero-card">
+					<div class="hero-card-top"><span>THE ROLE WE PLAY</span><span class="card-index">01</span></div>
+					<h2>One accountable partner for the parts of technology nobody has time to own.</h2>
+					<p>Not a distant ticket queue. Not a promise to automate everything. A clear relationship that helps your organization make better technology decisions.</p>
+					<div class="hero-card-rule"></div>
+					<p class="hero-card-foot">Southern Colorado<br />Remote-first when it makes sense</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<section class="section">
-  <div class="section-inner">
-    <div class="section-heading">
-      <p class="eyebrow">Business IT problems</p>
-      <h2>Technology should not slow down your business.</h2>
-      <p>Most small businesses do not need enterprise complexity. They need stable systems, clear access, monitored devices, reliable backups, and a practical security baseline.</p>
-    </div>
-    <div class="grid three pain-grid">
-      {["Recurring computer issues and slow systems", "Account access problems and password confusion", "Unclear backup status or no disaster recovery plan", "Vendor, domain, hosting, or Microsoft 365 confusion", "No consistent documentation for systems, users, or devices", "Security concerns without a realistic starting point"].map((item) => <article class="value-card"><h3>{item}</h3></article>)}
-    </div>
-  </div>
-</section>
+	<section class="signal-section">
+		<div class="section-inner signal-grid">
+			<div class="section-heading narrow-heading">
+				<p class="eyebrow">The gap we fill</p>
+				<h2>Most small organizations do not need more technology. They need more context.</h2>
+			</div>
+			<div class="friction-list">
+				{friction.map(([titleText, text], index) => (
+					<article class="friction-row">
+						<span class="row-number">0{index + 1}</span>
+						<div><h3>{titleText}</h3><p>{text}</p></div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
 
-<section class="section alt">
-  <div class="section-inner">
-    <div class="section-heading">
-      <p class="eyebrow">Commercial managed IT</p>
-      <h2>Focused support for the systems your organization depends on.</h2>
-      <p>Recurring managed IT support, monitoring, maintenance, backup oversight, account security, endpoint protection, and practical documentation for small business operations.</p>
-    </div>
-    <div class="grid three">
-      <article class="service-card"><span class="icon" aria-hidden="true"></span><h3>Managed IT Support and Operations</h3><p>Help desk support, system administration, vendor coordination, documentation, and day-to-day technology support.</p></article>
-      <article class="service-card"><span class="icon">RM</span><h3>Remote Monitoring and Maintenance</h3><p>Endpoint monitoring, routine maintenance, patching, and proactive issue detection.</p></article>
-      <article class="service-card"><span class="icon">BD</span><h3>Backup and Disaster Recovery</h3><p>Backup management, recovery planning, monitoring, and business continuity support.</p></article>
-      <article class="service-card"><span class="icon">365</span><h3>Account and Identity Security</h3><p>Microsoft 365 support, account protection, MFA guidance, access cleanup, and basic risk reduction.</p></article>
-      <article class="service-card"><span class="icon">EP</span><h3>Endpoint Protection</h3><p>Baseline endpoint security, protection oversight, and security-minded configuration support.</p></article>
-      <article class="service-card"><span class="icon">DOC</span><h3>Documentation and Vendor Coordination</h3><p>Asset inventories, account maps, vendor notes, and process documentation that make support more consistent.</p></article>
-    </div>
-  </div>
-</section>
+	<section class="section relationship-section">
+		<div class="section-inner">
+			<div class="section-heading wide-heading">
+				<p class="eyebrow">The relationship</p>
+				<h2>Technology support with a little more memory.</h2>
+				<p>Our work is designed to compound. Each improvement should leave the organization easier to support, easier to explain, and better prepared for the next decision.</p>
+			</div>
+			<div class="relationship-grid">
+				{relationship.map(([titleText, text], index) => (
+					<article class="relationship-step">
+						<span class="step-number">{String(index + 1).padStart(2, "0")}</span>
+						<h3>{titleText}</h3>
+						<p>{text}</p>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
 
-<section class="section">
-  <div class="section-inner">
-    <div class="section-heading">
-      <p class="eyebrow">Managed service plans</p>
-      <h2>Simple commercial plan options.</h2>
-      <p>Start with the support level that matches your business today, then mature your operations over time.</p>
-    </div>
-    <div class="plan-grid">
-      {plans.map(([name, price, fit, summary]) => <article class="plan-card"><h3>{name}</h3><p class="plan-price">{price}</p><p><strong>Best fit:</strong> {fit}</p><p>{summary}</p></article>)}
-    </div>
-  </div>
-</section>
+	<section class="section offer-section">
+		<div class="section-inner offer-layout">
+			<div class="offer-lead">
+				<p class="eyebrow">What the relationship can include</p>
+				<h2>Enough structure to be useful. Enough flexibility to fit the organization.</h2>
+				<p>Some organizations need ongoing operations support. Others need a foundation review, a project, or a clear second opinion before they commit. We can start with the work that matters most.</p>
+				<a class="text-link" href="/services">Explore the service areas <span aria-hidden="true">&#8594;</span></a>
+			</div>
+			<div class="offer-list">
+				<article><span class="offer-tag">01</span><div><h3>Technology foundation</h3><p>Current-state inventory, account and identity review, backup awareness, priority risks, and a roadmap.</p></div></article>
+				<article><span class="offer-tag">02</span><div><h3>Managed technology operations</h3><p>Remote support, endpoint and patch oversight, Microsoft 365 administration, vendor coordination, and documentation.</p></div></article>
+				<article><span class="offer-tag">03</span><div><h3>AI and automation enablement</h3><p>Use-case discovery, tool evaluation, safer configuration, workflow design, staff enablement, and ongoing review.</p></div></article>
+				<article><span class="offer-tag">04</span><div><h3>Defined projects and advisory work</h3><p>Migrations, implementations, recovery planning, workflow redesign, documentation, and other scoped outcomes.</p></div></article>
+			</div>
+		</div>
+	</section>
 
-<section class="section alt">
-  <div class="section-inner grid two">
-    <div class="content-block"><p class="eyebrow">Who we support</p><h2>Built for small businesses that need dependable IT without unnecessary complexity.</h2><p>Cassady Tech Solutions is a fit for small offices, nonprofits, professional services, local organizations, and hybrid teams that need recurring technology support with practical security built in.</p></div>
-    <div class="content-block"><p class="eyebrow">Service area</p><h2>Serving Southern Colorado businesses.</h2><p>Serving small businesses across Southern Colorado, including Colorado Springs, Fountain, Pueblo, Rye, Walsenburg, and surrounding communities.</p></div>
-  </div>
-</section>
+	<section class="section fit-section">
+		<div class="section-inner fit-grid">
+			<div>
+				<p class="eyebrow">A good fit when</p>
+				<h2>You are tired of being the person who has to remember everything.</h2>
+				<ul class="check-list">
+					<li><span>+</span><span>Your organization depends on email, cloud tools, devices, and shared information.</span></li>
+					<li><span>+</span><span>You have recurring technology decisions, not just one isolated repair.</span></li>
+					<li><span>+</span><span>You want practical guidance without enterprise theater or fear-based selling.</span></li>
+				</ul>
+			</div>
+			<aside class="boundary-note">
+				<p class="eyebrow">A clear boundary</p>
+				<h3>We will not pretend to be a 24/7 enterprise SOC.</h3>
+				<p>Our value is careful thinking, useful execution, and an honest understanding of what fits the organization, its budget, and its actual risk.</p>
+				<a class="text-link" href="/about">Read our approach <span aria-hidden="true">&#8594;</span></a>
+			</aside>
+		</div>
+	</section>
 
-<section class="section band">
-  <div class="section-inner">
-    <div>
-      <h2>Schedule a practical technology review.</h2>
-      <p>Bring recurring issues, Microsoft 365 confusion, backup uncertainty, endpoint concerns, or vendor problems into focus.</p>
-    </div>
-    <a class="button" href="/contact">Schedule a Technology Review</a>
-  </div>
-</section>
+	<section class="band">
+		<div class="section-inner band-inner">
+			<div><p class="eyebrow eyebrow-light">Start with the friction</p><h2>Bring us the technology problem that keeps resurfacing.</h2><p>A technology review is a working conversation about what is getting in the way, what matters next, and where support would actually help.</p></div>
+			<a class="button button-light" href="/contact">Schedule a technology review</a>
+		</div>
+	</section>
 </SiteLayout>
