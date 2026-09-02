@@ -7,6 +7,11 @@
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
+	"vars": {
+		"CONTACT_TO_EMAIL": "support@cassadytechsolutions.zohodesk.com",
+		"CONTACT_CC_EMAIL": "contact@cassadytech.com",
+		"CONTACT_FROM_EMAIL": "Cassady Tech Solutions <contact@cassadytech.com>"
+	},
 	"observability": {
 		"enabled": true
 	},
